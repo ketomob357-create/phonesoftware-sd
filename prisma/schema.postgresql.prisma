@@ -1,0 +1,36 @@
+// Prisma Schema للإنتاج على Vercel (PostgreSQL - Neon)
+// استخدم هذا الملف عند النشر على Vercel
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Tool {
+  id          String   @id @default(cuid())
+  name        String
+  nameEn      String   @map("name_en")
+  description String
+  downloadUrl String   @map("download_url")
+  priceSDG    Float    @map("price_sdg")
+  priceUSD    Float    @map("price_usd")
+  imageUrl    String?  @map("image_url")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("tools")
+}
+
+model Admin {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("admins")
+}

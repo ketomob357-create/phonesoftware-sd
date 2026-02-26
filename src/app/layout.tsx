@@ -14,24 +14,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Z.ai Code Scaffold - AI-Powered Development",
-  description: "Modern Next.js scaffold optimized for AI-powered development with Z.ai. Built with TypeScript, Tailwind CSS, and shadcn/ui.",
-  keywords: ["Z.ai", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "AI development", "React"],
-  authors: [{ name: "Z.ai Team" }],
+  title: "سوفت وير الهواتف SD | Phone Software Tools - أفضل أدوات صيانة الهواتف في السودان",
+  description: "متجر متخصص في بيع أدوات السوفت وير للهواتف - Unlock Tool, Chimera, Z3X, Octoplus وأكثر من 25 أداة احترافية بأسعار منافسة. تصميم المهندس محمد عبدالقادر أحمد",
+  keywords: ["سوفت وير", "هواتف", "أدوات", "صيانة", "فك قفل", "Unlock Tool", "Chimera", "Z3X", "software", "phone", "tools", "السودان"],
+  authors: [{ name: "المهندس محمد عبدالقادر أحمد" }],
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "/favicon.ico",
   },
   openGraph: {
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
-    url: "https://chat.z.ai",
-    siteName: "Z.ai",
+    title: "سوفت وير الهواتف SD | Phone Software Tools",
+    description: "أفضل أدوات السوفت وير لصيانة الهواتف في السودان - أكثر من 25 أداة احترافية",
     type: "website",
+    images: ["/og-image.png"],
+    locale: "ar_SD",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
+    title: "سوفت وير الهواتف SD",
+    description: "أفضل أدوات السوفت وير لصيانة الهواتف في السودان",
+    images: ["/og-image.png"],
   },
 };
 
@@ -41,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="ar" dir="rtl" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >

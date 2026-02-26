@@ -1,8 +1,5 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+// Prisma Schema للتطوير المحلي (SQLite)
+// للإنتاج على Vercel، استخدم schema.postgresql.prisma
 
 generator client {
   provider = "prisma-client-js"
@@ -13,20 +10,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id        String   @id @default(cuid())
-  email     String   @unique
-  name      String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+model Tool {
+  id          String   @id @default(cuid())
+  name        String
+  nameEn      String
+  description String
+  downloadUrl String
+  priceSDG    Float
+  priceUSD    Float
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
-model Post {
+model Admin {
   id        String   @id @default(cuid())
-  title     String
-  content   String?
-  published Boolean  @default(false)
-  authorId  String
+  email     String   @unique
+  password  String
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
 }
